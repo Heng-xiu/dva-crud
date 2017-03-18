@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Amy",
+      "email": "zera@yahoo.com",
+      "age": 23
+    },
+    {
+      "id": 2,
+      "name": "bay",
+      "email": "zera@mail.com",
+      "age": 59
+    },
+    {
+      "id": 3,
+      "name": "Amy",
+      "email": "zera@loli.com",
+      "age": 31
+    },
+    {
+      "id": 4,
+      "name": "Omei",
+      "email": "tua@mao.com",
+      "age": 46
+    },
+    {
+      "id": 5,
+      "age": "4",
+      "email": "0961268977",
+      "name": "好耶"
+    },
+    {
+      "name": "早安",
+      "email": "good@moringin.com",
+      "age": "123",
+      "id": 8
+    }
+  ]
+}

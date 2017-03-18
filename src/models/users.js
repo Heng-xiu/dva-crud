@@ -11,14 +11,12 @@ export default {
   reducers: {
     //聚合，統合資料處，故會回傳值也就是 state
     querySuccess(state, { payload: {data: list}}){
-      console.log(`[reducers]執行 querySuccess`);
       return {...state, list};
     },
   },
   effects: {
     // 異步（非同步）處理區塊
     *queryDB({ payload }, { call, put }) {  // eslint-disable-line
-      console.log(`[effect]queryDB`);
       let {data} = yield call(fetchDB);
       if(data) {
         yield put({

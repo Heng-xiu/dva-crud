@@ -2,7 +2,6 @@
 // .src/services/user.js
 
 import request from '../utils/request';
-import qs from 'qs';
 
 export { fetchDB, removeUser, patchUser, createUser };
 
@@ -34,7 +33,6 @@ function patchUser(id, values) {
 }
 
 function createUser(values) {
-  console.log(`[createUsers]=> ${values}`);
   return request(`${baseUrl}`, {
     method: 'POST',
     body: JSON.stringify(values),

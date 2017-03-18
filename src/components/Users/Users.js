@@ -13,14 +13,12 @@ const Users = ({
 }) => {
 
   function deleteHandler(id){
-    console.log('DELETE:' + id);
     dispatch({
       type: 'users/remove',
       payload: id
     });
   }
   function editHandler(id, values) {
-    console.log(`editHandler: ${id} + ${values}`);
     dispatch({
       type: 'users/patch',
       payload: { id, values },

@@ -83,6 +83,7 @@ const Users = ({
     showQuickJumper: true,
     showSizeChanger: true,
     defaultCurrent: 1,
+    pageSizeOptions: ['5', '10', '20', '50', '100'],
     // number of data per page
     pageSize: 10,
     onChange: () => {},

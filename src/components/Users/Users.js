@@ -80,6 +80,8 @@ const Users = ({
     totalData,
     // current page number
     currentPage,
+    showQuickJumper: true,
+    showSizeChanger: true,
     defaultCurrent: 1,
     // number of data per page
     pageSize: 10,

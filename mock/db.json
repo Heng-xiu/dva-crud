@@ -33,8 +33,14 @@
     {
       "name": "早安",
       "email": "good@moringin.com",
-      "age": "123",
+      "age": 99,
       "id": 8
+    },
+    {
+      "name": "Hello",
+      "email": "hell@hell.com",
+      "age": 23,
+      "id": 9
     }
   ]
 }

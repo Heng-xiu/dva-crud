@@ -1,7 +1,7 @@
 // ./src/components/Users/UsersModal
 
 import React, { Component } from 'react';
-import { Modal, Form, Input } from 'antd';
+import { Modal, Form, Input,InputNumber } from 'antd';
 
 const FormItem = Form.Item;
 
@@ -65,7 +65,14 @@ class UserEditModal extends Component {
               {
                 getFieldDecorator('name', {
                   initialValue: name,
-                })(<Input />)
+                  rules:[{
+                    tpye: 'string',
+                    message: 'It since does not like a name...',
+                  }, {
+                    required: true,
+                    message: 'Do not forget your name >.=',
+                  }]
+                })(<Input placeholder="Username"/>)
               }
             </FormItem>
             <FormItem
@@ -75,7 +82,14 @@ class UserEditModal extends Component {
               {
                 getFieldDecorator('email', {
                   initialValue: email,
-                })(<Input />)
+                  rules: [{
+                    type: 'email',
+                    message: 'The input is not email!',
+                  }, {
+                    required: true,
+                    message: 'Please input your E-mail!',
+                  }]
+                })(<Input placeholder="foo@bar.com" />)
               }
             </FormItem>
             <FormItem
@@ -85,7 +99,14 @@ class UserEditModal extends Component {
               {
                 getFieldDecorator('age', {
                   initialValue: age,
-                })(<Input />)
+                  rules: [{
+                    type: 'integer',
+                    message: 'This input is not number',
+                  }, {
+                    required: true,
+                    message: 'Please input your Age!',
+                  }]
+                })(<InputNumber min={1} max={99} placeholder="18"/>)
               }
             </FormItem>
           </Form>

@@ -7,8 +7,8 @@ import UserModal from './UserModal';
 const Users = ({
   list: dataSource,
   loading,
-  total,
-  current,
+  totalData,
+  currentPage,
   dispatch
 }) => {
 
@@ -55,7 +55,11 @@ const Users = ({
     key: 'operation',
     render: (text, record) => (
       <p>
-        <UserModal record={record} onOk={editHandler.bind(null, record.id)}>
+        <UserModal
+          record={record}
+          isEdit={true}
+          onOk={editHandler.bind(null, record.id)}
+        >
           <a>Edit</a>
         </UserModal>
         <span className="ant-divider" />
@@ -72,8 +76,12 @@ const Users = ({
   }];
   // Define Pagination
   const pagination = {
-    total,
-    current,
+    // total number of data
+    totalData,
+    // current page number
+    currentPage,
+    defaultCurrent: 1,
+    // number of data per page
     pageSize: 10,
     onChange: () => {},
   };
@@ -81,7 +89,11 @@ const Users = ({
   return (
     <div>
       <div>
-        <UserModal record={{}} onOk={createHandler}>
+        <UserModal
+          record={{}}
+          isEdit={false}
+          onOk={createHandler}
+        >
           <Button type="primary">Create User</Button>
         </UserModal>
       </div>

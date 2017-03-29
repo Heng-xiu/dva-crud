@@ -3,21 +3,19 @@
 
 import request from '../utils/request';
 
-export { fetchDB, removeUser, patchUser, createUser };
+const baseUrl = 'http://localhost:9090/users/';
 
-var baseUrl = `http://localhost:9090/users/`;
-
-function fetchDB(){
+function fetchDB() {
   return request(`${baseUrl}`, {
     method: 'GET',
     headers: new Headers({
-		    'Content-Type': 'application/json'
-	  }),
+      'Content-Type': 'application/json',
+    }),
   });
 }
 
 function removeUser(id) {
-  return request (`${baseUrl}${id}`, {
+  return request(`${baseUrl}${id}`, {
     method: 'DELETE',
   });
 }
@@ -27,8 +25,8 @@ function patchUser(id, values) {
     method: 'PATCH',
     body: JSON.stringify(values),
     headers: new Headers({
-		    'Content-Type': 'application/json'
-	  }),
+      'Content-Type': 'application/json',
+    }),
   });
 }
 
@@ -37,7 +35,9 @@ function createUser(values) {
     method: 'POST',
     body: JSON.stringify(values),
     headers: new Headers({
-		    'Content-Type': 'application/json'
-	  }),
+      'Content-Type': 'application/json',
+    }),
   });
 }
+
+export { fetchDB, removeUser, patchUser, createUser };

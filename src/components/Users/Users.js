@@ -1,7 +1,7 @@
 // ./src/components/Users/Users
 import React from 'react';
 import { connect } from 'dva';
-import { Table, message, Popconfirm, Button } from 'antd';
+import { Table, Popconfirm, Button } from 'antd';
 import UserModal from './UserModal';
 
 const Users = ({
@@ -9,13 +9,12 @@ const Users = ({
   loading,
   totalData,
   currentPage,
-  dispatch
+  dispatch,
 }) => {
-
-  function deleteHandler(id){
+  function deleteHandler(id) {
     dispatch({
       type: 'users/remove',
-      payload: id
+      payload: id,
     });
   }
   function editHandler(id, values) {
@@ -35,11 +34,11 @@ const Users = ({
     title: 'ID',
     dataIndex: 'id',
     key: 'id',
-  },{
+  }, {
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: (text) => <a href="#">{text}</a>,
+    render: text => <a href="/">{text}</a>,
   }, {
     title: 'Email',
     dataIndex: 'email',
@@ -57,7 +56,7 @@ const Users = ({
       <p>
         <UserModal
           record={record}
-          isEdit={true}
+          isEdit
           onOk={editHandler.bind(null, record.id)}
         >
           <a>Edit</a>
@@ -69,7 +68,7 @@ const Users = ({
           cancelText="No"
           onConfirm={deleteHandler.bind(null, record.id)}
         >
-          <a href="#">Delete</a>
+          <a href="/">Delete</a>
         </Popconfirm>
       </p>
     ),

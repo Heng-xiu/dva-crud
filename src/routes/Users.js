@@ -1,7 +1,7 @@
 // src/routes/Users.js
 // 這裡比較像是 view 的概念
 
-import React , { Component, PropTypes }from 'react';
+import React, { Component, PropTypes } from 'react';
 // import { connect } from 'dva';
 
 import UsersComponent from '../components/Users/Users';

@@ -9,33 +9,33 @@ export default {
     list: [],
   },
   reducers: {
-    //聚合，統合資料處，故會回傳值也就是 state
-    querySuccess(state, { payload: {data: list}}){
-      return {...state, list};
+    // 聚合，統合資料處，故會回傳值也就是 state
+    querySuccess(state, { payload: { data: list } }) {
+      return { ...state, list };
     },
   },
   effects: {
     // 異步（非同步）處理區塊
     *queryDB({ payload }, { call, put }) {  // eslint-disable-line
-      let {data} = yield call(fetchDB);
-      if(data) {
+      const { data } = yield call(fetchDB);
+      if (data) {
         yield put({
           type: 'querySuccess',
           payload: {
-            data
-          }
-        })
+            data,
+          },
+        });
       }
     },
-    *create({ payload: values }, {call, put }){
+    *create({ payload: values }, { call, put }) {
       yield call(createUser, values);
       yield put({ type: 'queryDB' });
     },
-    *patch({ payload: { id, values }},{ call, put }){
+    *patch({ payload: { id, values } }, { call, put }) {
       yield call(patchUser, id, values);
       yield put({ type: 'queryDB' });
     },
-    *remove({payload: id}, { call, put }){
+    *remove({ payload: id }, { call, put }) {
       yield call(removeUser, id);
       yield put({ type: 'queryDB' });
     },
@@ -47,7 +47,7 @@ export default {
         if (pathname === '/users') {
           dispatch({
             type: 'queryDB',
-            payload: query
+            payload: query,
           });
         }
       });

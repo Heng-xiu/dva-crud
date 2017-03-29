@@ -16,7 +16,7 @@ function Header({ location }) {
         <Link to="/"><Icon type="home" />Home</Link>
       </Menu.Item>
       <Menu.Item key="/antd">
-        <a href="https://github.com/Heng-xiu/dva-crud" target="_blank">
+        <a href="https://github.com/Heng-xiu/dva-crud" target="_blank" rel="noopener noreferrer">
           <Icon type="github" />
           github
         </a>
